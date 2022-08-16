@@ -1,2 +1,2 @@
 # JS30-Series
-All projects in the JS30 series
+All projects have been implemented or inspired by the Wes Bos JS30 series.
