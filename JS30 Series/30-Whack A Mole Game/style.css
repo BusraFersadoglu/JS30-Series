@@ -1,0 +1,85 @@
+* {
+    padding: 0;
+    margin: 1rem;
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    list-style: none;
+    scroll-behavior: smooth;
+    background: #ffc600;
+}
+*:focus{
+    outline: 0;
+}
+img, video{
+    display: block;
+    max-width: 100%;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h1 {
+    font-size: 6rem;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+button{
+    font-size: 2rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+  
+.score {
+    background: rgba(255,255,255,0.2);
+    padding: 0 3rem;
+    border-radius: 1rem;
+}
+  
+.game {
+    width: 900px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+  
+.hole {
+    flex: 1 0 16%;
+    overflow: hidden;
+    position: relative;
+}
+  
+.hole:after {
+    display: block;
+    background: url(dirt.svg) bottom center no-repeat;
+    background-size: contain;
+    content: '';
+    width: 100%;
+    height:70px;
+    position: absolute;
+    z-index: 2;
+    bottom: -30px;
+}
+  
+.mole {
+    background: url('mole.svg') bottom center no-repeat;
+    background-size: 60%;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    transition:all 0.4s;
+    cursor: pointer;
+}
+  
+.hole.up .mole {
+    top: 0;
+}

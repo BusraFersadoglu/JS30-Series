@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Codes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="title.png">
+</head>
+<body>
+    <style>
+        .sections{
+            min-height: 100vh;
+            overflow: hidden;
+            display: flex;
+        }
+        .section{
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
+            color: white;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            transition:
+                font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+                flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11);
+            font-size: 2rem;
+        } 
+        .section1{ background: #FFE4B5;}
+        .section2{ background: #FFC0CB;}
+        .section3{ background: #DDA0DD;}
+        .section4{ background: #B0E0E6;}
+        .section5{ background: #87CEFA;}
+
+        .section > *{
+            margin: 0;
+            width: 100%;
+            transition: transform 0.5s;
+            flex: 1 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .section > *:first-child{ transform: translateY(-100%);}
+        .section.open-active > *:first-child { transform: translateY(0); }
+
+        .section > *:last-child{ transform: translateY(100%);}
+        .section.open-active > *:last-child { transform: translateY(0); }
+
+        .section p:nth-child(2) {
+            font-size: 2.7rem;
+        }
+        .section.open{ 
+            flex: 1.5;
+        }
+        .section p:nth-child(2):hover{
+            cursor: pointer;
+        }
+    </style>
+
+    <div class="sections">
+        <div class="section section1">
+            <p>#FFE4B5</p>
+            <p>Moccasin</p>
+            <p>rgb(255, 228, 181)</p>
+        </div>
+        <div class="section section2">
+            <p>#FFB6C1</p>
+            <p>Pink</p>
+            <p>rgb(255, 182, 193)</p>
+        </div>
+        <div class="section section3">
+            <p>#DA70D6</p>
+            <p>Plum</p>
+            <p>rgb(218, 112, 214)</p>
+        </div>
+        <div class="section section4">
+            <p>#B0E0E6</p>
+            <p>Powder <br> Blue</p>
+            <p>rgb(176, 224, 230)</p>
+        </div>
+        <div class="section section5">
+            <p>#87CEFA</p>
+            <p>Sky <br> Blue</p>
+            <p>rgb(135, 206, 250)</p>
+        </div>
+    </div>
+    <script>
+        const sections = document.querySelectorAll(".section");
+
+        function toggleOpen(){
+            this.classList.toggle("open")
+        }
+
+        function toggleActive(e) {
+            if (e.propertyName.includes('flex')) {
+                this.classList.toggle('open-active');
+            }
+        }
+        sections.forEach(i => i.addEventListener("click", toggleOpen));
+        sections.forEach(i => i.addEventListener('transitionend', toggleActive));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h3>Travel Checkbox List &#9992</h3>
+    </header>
+    <div class="content">
+        <div class="item" >
+            <input type="checkbox">
+            <p>Passport</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Ticket</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Hotel voucher</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>International credit card</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Maps and travel guides</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Medical prescriptions</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Drivers's license </p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Wallet/Cash</p>
+        </div>
+    </div>
+    
+    <script>
+        const checkboxs = document.querySelectorAll('.content input[type="checkbox"]');
+
+        let lastChecked;
+
+        function handleCheck(e) {
+        let inBetween = false;
+
+            if (e.shiftKey && this.checked) {
+                checkboxs.forEach(checkbox => {
+                    
+                if (checkbox === this || checkbox === lastChecked) {
+                    inBetween = !inBetween;
+                }
+                if (inBetween) {
+                    checkbox.checked = true;
+                }
+                });
+            }
+        lastChecked = this;
+        }
+        checkboxs.forEach(e => e.addEventListener("click", handleCheck));
+    </script>
+</body>
+</html>
