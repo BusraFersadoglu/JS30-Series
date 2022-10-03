@@ -1,5 +1,5 @@
 # JS30-Series
-All projects have been implemented or inspired by the Wes Bos JS30 series.
+All projects have been implemented or inspired by the [Wes Bos JS30 series](https://javascript30.com/).
 
 | Projects 
 | --- |
